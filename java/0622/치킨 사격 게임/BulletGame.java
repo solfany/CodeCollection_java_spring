@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class BulletGames extends JFrame {
-    private int score; // Variable to store the score
+    private int score; // 점수를 저장하는 변수
 
     public BulletGames() {
         setTitle("사격 게임");
@@ -30,10 +30,10 @@ public class BulletGames extends JFrame {
         new BulletGames();
     }
 
-    // Method to update the score
+    // 점수를 업데이트하는 메소드
     public void updateScore() {
         score++;
-        System.out.println("Score: " + score); // You can modify this line to display the score wherever you want
+        System.out.println("Score: " + score); // 원하는 위치에 점수를 표시하는 방식으로 이 부분을 수정할 수 있습니다.
     }
 
     class GamePanel extends JPanel {
@@ -124,16 +124,15 @@ public class BulletGames extends JFrame {
                 while (true) {
                     if (hit()) {
                         targetThread.interrupt();
-                        bullet.setLocation(bullet.getParent().getWidth()/ 2 - 5,
-                                bullet.getParent().getHeight() - 50);
-                        updateScore(); // Increase the score
+                        bullet.setLocation(bullet.getParent().getWidth() / 2 - 5,
+                        		bullet.getParent().getHeight() - 50);
+                        updateScore(); // 점수를 증가시킴
                         JOptionPane.showMessageDialog(null, "게임 종료");
                         System.exit(0);
                         return;
-                    } else {
+                        } else {
                         int x = bullet.getX();
                         int y = bullet.getY() - 5;
-
                         if (y < 0) {
                             bullet.setLocation(bullet.getParent().getWidth() / 2 - 5,
                                     bullet.getParent().getHeight() - 50);
@@ -149,6 +148,7 @@ public class BulletGames extends JFrame {
                 }
             }
 
+            // 총알이 목표물에 맞는지 여부를 반환하는 메소드
             private boolean hit() {
                 if (targetContains(bullet.getX() + bullet.getWidth() - 1, bullet.getY())
                         || targetContains(bullet.getX() + bullet.getWidth() - 1,
@@ -160,6 +160,7 @@ public class BulletGames extends JFrame {
                 }
             }
 
+            // 목표물 영역에 해당 좌표가 포함되는지 여부를 반환하는 메소드
             private boolean targetContains(int x, int y) {
                 if (((target.getX() <= x) && (target.getX() + target.getWidth() - 1 >= x))
                         && ((target.getY() <= y) && (target.getY() + target.getHeight() - 1 >= y))) {
@@ -171,4 +172,3 @@ public class BulletGames extends JFrame {
         }
     }
 }
-
