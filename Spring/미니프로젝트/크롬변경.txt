@@ -1,0 +1,11 @@
+
+윈도우 환경에서 크롬으로 변경할때 파워셀에서는 이렇게
+
+npm install concurrently --save-dev
+
+"scripts": {
+  "start": "concurrently \"react-scripts start\" \"powershell Start-Process chrome http://localhost:3000/\"",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},

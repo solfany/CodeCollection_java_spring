@@ -1,0 +1,13 @@
+apis dir - back end 와 연결할 axios함수들
+assets - 이미지 비디오 폰트
+components
+constants - 상수들
+interfaces - Type으로 사용할 인스턴스들
+utils - 각종 메서드 들
+stores - 스토어함수들
+views - 큰페이지 혹은 레이아웃 단위의 컴포넌트들
+
+
+
+npm install axios
+

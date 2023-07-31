@@ -1,0 +1,17 @@
+포스트맨에서
+http://localhost:8284/api/auth/signUp
+포스트방식 json타입으로 보내면
+{
+  "userEmail": "citadell@naver.com",
+  "userPassword": "qwer1234!!",
+  "userPasswordCheck": "qwer1234!!",
+  "userNickname": "jun",
+  "userPhoneNumber": "010-9304-1234",
+  "userAddress": "대한민국 서울시",
+  "userAddressDetail": "강서구"
+}
+
+아래처럼 나오게 된다
+
+부트 콘솔로 나오는것-------------------------------------------------------------------------------
+SignUpDto(userEmail=citadell@naver.com, userPassword=qwer1234!!, userPasswordCheck=qwer1234!!, userNickname=jun, userPhoneNumber=010-9304-1234, userAddress=대한민국 서울시, userAddressDetail=강서구)
